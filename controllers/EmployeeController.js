@@ -3,6 +3,7 @@ var router = express.Router();
 
 var { Employee } = require("../models/employee");
 
+//get all employees
 router.get("/", (req, res) => {
   Employee.find((err, docs) => {
     if (!err) {
@@ -15,6 +16,7 @@ router.get("/", (req, res) => {
   });
 });
 
+//add employee
 router.post("/", (req, res) => {
   var emp = new Employee({
     name: req.body.name,
